@@ -1,18 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Route Enterprises</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+<title>Elite Route Enterprises | Tours & Travels</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff;
+color:#333;
+line-height:1.6;
+}
+
+:root{
+--primary:#0B1F3A;
+--gold:#D4AF37;
+--white:#ffffff;
+}
+
+header{
+background:var(--primary);
+padding:15px 8%;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+color:white;
+font-size:28px;
+font-weight:700;
+}
+
+.logo span{
+color:var(--gold);
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.hero{
+height:100vh;
+background:url('images/hero.jpg') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+}
+
+.hero-content{
+position:relative;
+color:white;
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:var(--gold);
+color:black;
+text-decoration:none;
+border-radius:5px;
+font-weight:600;
+margin:10px;
+}
+
+section{
+padding:80px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+margin-bottom:50px;
+color:var(--primary);
+}
+
+.about{
+background:#f8f8f8;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.card h3{
+margin-bottom:15px;
+color:var(--primary);
+}
+
+.fleet-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.vehicle{
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.vehicle img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.vehicle-content{
+padding:20px;
+}
+
+.vehicle-content h3{
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.why{
+background:var(--primary);
+color:white;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.why-box{
+background:rgba(255,255,255,.1);
+padding:20px;
+border-radius:8px;
+}
+
+.contact{
+background:#f5f5f5;
+text-align:center;
+}
+
+.contact h3{
+margin-bottom:15px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
 </head>
-
 <body>
 
 <header>
+
 <nav>
 
 <div class="logo">
@@ -20,17 +245,18 @@ Elite<span>Route</span>
 </div>
 
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="fleet.html">Fleet</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#fleet">Fleet</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 
 </nav>
+
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-content">
 
@@ -52,7 +278,166 @@ WhatsApp
 
 </section>
 
-<script src="js/script.js"></script>
+<section class="about" id="about">
+
+<h2 class="section-title">About Us</h2>
+
+<p style="text-align:center;max-width:1000px;margin:auto;">
+Elite Route Enterprises provides premium travel services including airport transfers,
+corporate transportation, outstation trips, wedding transportation,
+tempo travellers, force urbania rentals and customized tour packages across India.
+</p>
+
+</section>
+
+<section id="services">
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="services-grid">
+
+<div class="card">
+<h3>Airport Transfers</h3>
+<p>24×7 airport pickup and drop services.</p>
+</div>
+
+<div class="card">
+<h3>Corporate Travel</h3>
+<p>Professional transportation solutions.</p>
+</div>
+
+<div class="card">
+<h3>Outstation Trips</h3>
+<p>Safe and comfortable long-distance travel.</p>
+</div>
+
+<div class="card">
+<h3>Wedding Transport</h3>
+<p>Luxury transportation for weddings.</p>
+</div>
+
+<div class="card">
+<h3>Tempo Traveller</h3>
+<p>Group tours and family trips.</p>
+</div>
+
+<div class="card">
+<h3>Tour Packages</h3>
+<p>Customized holiday packages.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="fleet">
+
+<h2 class="section-title">Our Fleet</h2>
+
+<div class="fleet-grid">
+
+<div class="vehicle">
+
+<img src="images/innova.jpg">
+
+<div class="vehicle-content">
+<h3>Toyota Innova Crysta</h3>
+<p>Luxury • 6+1 Seating</p>
+</div>
+
+</div>
+
+<div class="vehicle">
+
+<img src="images/urbania.jpg">
+
+<div class="vehicle-content">
+<h3>Force Urbania</h3>
+<p>Premium Group Travel</p>
+</div>
+
+</div>
+
+<div class="vehicle">
+
+<img src="images/carens.jpg">
+
+<div class="vehicle-content">
+<h3>Kia Carens</h3>
+<p>Comfortable Family Travel</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="why">
+
+<h2 class="section-title" style="color:white;">
+Why Choose Us
+</h2>
+
+<div class="why-grid">
+
+<div class="why-box">
+✔ Professional Drivers
+</div>
+
+<div class="why-box">
+✔ Clean Vehicles
+</div>
+
+<div class="why-box">
+✔ GPS Tracking
+</div>
+
+<div class="why-box">
+✔ Affordable Pricing
+</div>
+
+<div class="why-box">
+✔ Corporate Billing
+</div>
+
+<div class="why-box">
+✔ 24×7 Support
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<h3>Elite Route Enterprises</h3>
+
+<p>📧 info@eliteroute.co.in</p>
+
+<p>🌐 www.eliteroute.co.in</p>
+
+<p>📞 +91 XXXXXXXXXX</p>
+
+<br>
+
+<a class="btn" href="mailto:info@eliteroute.co.in">
+Send Email
+</a>
+
+</section>
+
+<footer>
+
+© 2026 Elite Route Enterprises. All Rights Reserved.
+
+</footer>
+
+<a href="https://wa.me/919999999999" class="whatsapp">
+WhatsApp
+</a>
 
 </body>
 </html>
